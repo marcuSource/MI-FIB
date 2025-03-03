@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{report}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tgadventor}  % Alternativa a Comfortaa para pdfLaTeX
+
+% Define royal blue color and its lighter variants
+\definecolor{royalblue}{RGB}{65, 105, 225}
+\definecolor{upcblue}{RGB}{64, 106, 231}
+\definecolor{lightroyalblue}{RGB}{100, 140, 250}
+\definecolor{verylightroyalblue}{RGB}{220, 230, 255}
+
+
+
+
+% Page geometry - AUMENTADO EL HEADHEIGHT
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm,
+    headheight=25pt, % Aumentado de 15pt a 25pt para dar más espacio
+    headsep=-30pt
+}
+
+% Set up hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=royalblue,
+    filecolor=royalblue,
+    urlcolor=royalblue,
+}
+
+% Custom section formatting with sans serif font (similar to Comfortaa)
+\titleformat{\chapter}
+  {\sffamily\huge\bfseries\color{royalblue}}
+  {\thechapter}{1em}{}
+\titleformat{\section}
+  {\sffamily\Large\bfseries\color{royalblue}}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\sffamily\large\bfseries\color{lightroyalblue}}
+  {\thesubsection}{1em}{}
+
+% Custom header/footer style
+\pagestyle{fancy}
+\fancyhf{} % Borramos todos los campos
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Configuración explícita de cabeceras - CORREGIDO
+\fancyhead[L]{\includegraphics[height=1cm]{logo-elite-blue.png}}
+\fancyhead[R]{\textcolor{royalblue}{\sffamily \LARGE{Elite Supplements}}}
+\fancyfoot[C]{\textcolor{royalblue}{\Large{\thepage}}}
+
+% Custom table style
+\newcommand{\bluecell}[1]{\cellcolor{verylightroyalblue}#1}
+\newcommand{\blueheader}[1]{\cellcolor{royalblue}\textcolor{white}{\textbf{#1}}}
+
+% Custom title page - versión simplificada
+\newcommand{\maketitlepage}{
+    \begin{titlepage}
+        \pagecolor{royalblue}
+        
+        % Top logo with FIB included - centered at the top
+        \begin{center}
+            \includegraphics[width=15cm]{logo-upc.png}
+        \end{center}
+        
+        % Center content - adjusted spacing to fit on one page
+        \vspace{0.5cm}
+        \begin{center}
+            \includegraphics[width=7cm]{logo-elite.png}
+            
+            {\sffamily\fontsize{38}{42}\selectfont\textcolor{white}{Elite}\par}
+            {\sffamily\fontsize{38}{42}\selectfont\textcolor{white}{Supplements}\par}
+            
+            \vspace{2.5cm}
+            {\sffamily\fontsize{18}{22}\selectfont\textcolor{white}{MI - Plan de Marketing Digital}\par}
+
+            \vspace{1.5cm}
+            {\sffamily\fontsize{18}{22}\selectfont\textcolor{white}{2024/2025 Q2}\par}
+        \end{center}
+        
+        %
+        \vfill
+
+        % Área para el profesor y los autores alineados horizontalmente
+
+        \begin{minipage}[t]{0.45\textwidth}
+            \begin{flushleft}
+                \textcolor{white}{\sffamily Profesor: Iñaki Vázquez Álvarez}
+            \end{flushleft}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.45\textwidth}
+            \begin{flushright}
+                \textcolor{white}{\sffamily Font i Cabarrocas, Marc}\\
+                \textcolor{white}{\sffamily Monente Serra, Xavi}\\
+                \textcolor{white}{\sffamily Pomykalski, Piotr}\\
+                \textcolor{white}{\sffamily Román Mendoza, Diego}
+            \end{flushright}
+        \end{minipage}
+        
+    \end{titlepage}
+    \pagecolor{white}
+    \newpage
+}
+
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+  \thispagestyle{fancy}% Cambiar 'plain' a 'fancy'
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+\makeatother
+
+\pagestyle{fancy}
+% Document begins
+
+%\setlength{\headsep}{-30pt}
+
+
+\begin{document}
+
+\maketitlepage
+
+\tableofcontents
+\newpage
+
+% Agregar un comando para forzar la aparición de cabeceras en cada página
+\pagestyle{fancy}
+
+% The document structure is provided but with no content 
+% as you mentioned you want to add the content yourself
+
+\chapter{Resumen Ejecutivo}
+% Space for your content
+
+\chapter{Análisis Previo}
+\section{Empresa}
+\section{Propuesta de Valor}
+\section{Público Objetivo}
+\begin{table}[h]
+    \centering
+    \caption{Segmentos de Público Objetivo}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
+    \toprule
+    \blueheader{Segmento} & \blueheader{Características} & \blueheader{Enfoque de Marketing} \\
+    \midrule
+    \bluecell{Segmento 1} & & \\
+    \midrule
+    \bluecell{Segmento 2} & & \\
+    \midrule
+    \bluecell{Segmento 3} & & \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+\section{Competencia}
+
+\chapter{Objetivos}
+
+\end{document}
