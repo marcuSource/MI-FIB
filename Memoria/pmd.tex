@@ -6,6 +6,7 @@
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{booktabs}
@@ -13,14 +14,41 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage{tgadventor}  % Alternativa a Comfortaa para pdfLaTeX
+\usepackage{parskip}
+\usepackage{soul}
+\usepackage{wasysym}
+\usepackage{pgf-pie}
+
+\usetikzlibrary{calc}
 
 % Define royal blue color and its lighter variants
 \definecolor{royalblue}{RGB}{65, 105, 225}
-\definecolor{upcblue}{RGB}{64, 106, 231}
-\definecolor{lightroyalblue}{RGB}{100, 140, 250}
-\definecolor{verylightroyalblue}{RGB}{220, 230, 255}
+\definecolor{lightroyalblue}{RGB}{30, 144, 255}
+\definecolor{royalsky}{RGB}{0, 191, 255}
+\definecolor{lightroyalsky}{RGB}{135, 206, 235}
 
+\definecolor{bknwhite}{RGB}{248, 249, 250}
+
+\definecolor{redcircle}{RGB}{176, 56, 73}     % Red for ON circle
+\definecolor{bluecircle}{RGB}{100, 143, 192}  % Blue for Huel circle
+\definecolor{greencircle}{RGB}{95, 173, 153}  % Green for Gainful circle
+
+\newtcbox{\roundhl}{
+  enhanced,
+  nobeforeafter,
+  tcbox raise base,
+  boxrule=0pt,
+  top=1pt,
+  bottom=1pt,
+  right=1pt,
+  left=1pt,
+  arc=2pt, % This controls the corner radius
+  boxsep=0pt,
+  colback=royalsky, % Highlight color
+  colframe=royalsky,
+}
 
 
 
@@ -32,7 +60,7 @@
     left=2.5cm,
     right=2.5cm,
     headheight=25pt, % Aumentado de 15pt a 25pt para dar más espacio
-    headsep=-30pt
+    headsep=20pt
 }
 
 % Set up hyperlinks
@@ -48,7 +76,7 @@
   {\sffamily\huge\bfseries\color{royalblue}}
   {\thechapter}{1em}{}
 \titleformat{\section}
-  {\sffamily\Large\bfseries\color{royalblue}}
+  {\sffamily\Large\bfseries\color{lightroyalblue}}
   {\thesection}{1em}{}
 \titleformat{\subsection}
   {\sffamily\large\bfseries\color{lightroyalblue}}
@@ -63,10 +91,12 @@
 % Configuración explícita de cabeceras - CORREGIDO
 \fancyhead[L]{\includegraphics[height=1cm]{logo-elite-blue.png}}
 \fancyhead[R]{\textcolor{royalblue}{\sffamily \LARGE{Elite Supplements}}}
-\fancyfoot[C]{\textcolor{royalblue}{\Large{\thepage}}}
+\fancyfoot[C]{\textcolor{royalblue}{\Large{- \thepage \space -}}}
+\fancyfoot[L]{\textcolor{royalblue}{{Marketing a Internet}}}
+\fancyfoot[R]{\textcolor{royalblue}{{Plan de Marketing Digital}}}
 
 % Custom table style
-\newcommand{\bluecell}[1]{\cellcolor{verylightroyalblue}#1}
+\newcommand{\bluecell}[1]{\cellcolor{lightroyalsky}#1}
 \newcommand{\blueheader}[1]{\cellcolor{royalblue}\textcolor{white}{\textbf{#1}}}
 
 % Custom title page - versión simplificada
@@ -132,9 +162,14 @@
 
 %\setlength{\headsep}{-30pt}
 
+\titlespacing*{\chapter}{0pt}{0pt}{1em}
 
+% This will reduce space before sections
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+% This will reduce space before subsections
+\titlespacing*{\subsection}{0pt}{0.8em}{0.3em}
 \begin{document}
-
 \maketitlepage
 
 \tableofcontents
@@ -151,25 +186,331 @@
 
 \chapter{Análisis Previo}
 \section{Empresa}
-\section{Propuesta de Valor}
+Con la misión de ofrecer suplementos nutricionales de la mayor calidad y brindar a la población española el mejor bienestar y rendimiento posible, nació en Junio de 2024 Elite Supplements.
+
+En España la concienciación de lo que comemos crece diariamente, llegando a niveles proximos al 70\% según un estudio llevado a cabo por la Cruz Roja.
+
+Elite Supplements opera exclusivamente en España, con un modelo de negocio tanto online como en tienda física. Nuestra visión de empresa es llegar a ser la tienda de referencia en cuanto a suplementos nutricionales, distinguiendonos de los pilares fundamentales de la compañía son los que se listan a continuación:
+\vspace{0.5cm}
+
+\textcolor{royalsky}{\LARGE{Calidad}} \newline
+En Elite Supplements, garantizamos la excelencia mediante rigurosa selección de materias primas, controles exhaustivos de fabricación y certificaciones internacionales que avalan la pureza y potencia de nuestros productos. Nos comprometemos con estándares superiores para asegurar que cada producto optimice efectivamente la salud y rendimiento de nuestros clientes.
+\newline
+
+\textcolor{royalsky}{\LARGE{Confianza}} \newline
+Construimos relaciones duraderas basadas en transparencia total sobre ingredientes y sus cantidades exactas. Respaldamos nuestras afirmaciones con evidencia científica sólida, generando una comunidad leal que nos recomienda por nuestra integridad y resultados consistentes.
+\newline
+
+\textcolor{royalsky}{\LARGE{Innovación}} \newline
+Dedicamos recursos significativos a investigación y desarrollo para descubrir nuevos compuestos bioactivos y mejorar la biodisponibilidad. Nuestro equipo científico colabora con instituciones académicas de prestigio para anticipar necesidades emergentes y establecer nuevos estándares en la industria nutricional global.
+\newline
+
+\textcolor{royalsky}{\LARGE{Personalización}} \newline
+Reconocemos la singularidad de cada individuo mediante sistemas avanzados de evaluación que permiten recomendar combinaciones específicas de suplementos adaptadas a cada perfil. Ofrecemos asesoramiento especializado y seguimiento continuo para ajustar recomendaciones, maximizando la efectividad de nuestros productos y ayudando a cada persona a alcanzar sus objetivos de forma óptima.
+\newline
+
+Pese a ser una corporación joven, nuestros productos se venden en 9 ubicaciones en Cataluña. Habiendo cerrado el el año con un promedio de 50 compras al mes en cada uno de nuestros centros por un valor promedio de 20\euro\space por compra. 
+
+%% Preguntar a Iñaki si pongo que no vendemos ni papa online AQUÍ
+
+\newpage
+
 \section{Público Objetivo}
+
+El público objetivo de Elite Supplements se puede dividir en base a datos obtenidos en el Instituto de Estadística Nacional.
+
+La primera sección se basa en el hecho que un 50\% de habitantes practica ejercicio con regularidad, y un 20\% lo hace en gimnasios de forma rutinaria. En base a esta  información se indago en la segmentación por franjas de edad y se encontró que del 50\% que hace ejercicio regular, más de un tercio se encuentran en las franjas de entre 18-34 años. Además del 20\% que va al gimnasio semanalmente, más de la mitad se encuentran en la franja de 18-24 años.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GRAFICO
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+      \pie[color={greencircle,greencircle!80!white,royalblue!80!white,royalblue!70!white,royalblue!60!white,lightroyalblue!50!white}, 
+           sum=100, 
+           after number=\%, 
+           before number=,
+           text=legend] 
+          {21.7/18-24, 19.4/25-34, 17.8/35-44, 15.5/45-54, 14.0/55-65, 11.6/65+};
+    \end{tikzpicture}
+    \label{fig:pie-chart-1-mini}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+      \pie[color={greencircle,royalblue!80!white,royalblue!70!white,royalblue!60!white,lightroyalblue!50!white,lightroyalblue!40!white}, 
+           sum=100, 
+           after number=\%, 
+           before number=,
+           text=legend] 
+          {54.5/18-24, 32.7/25-34, 9.1/35-44, 2.2/45-54, 1.4/55-65, 0.1/65+};
+    \end{tikzpicture}
+    \label{fig:pie-chart-2-mini}
+  \end{minipage}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Estos factores llevaron al primer grupo concentrado de publico objetivo: Deportistas de entre 18-24 años, aproximadamente un tamaño de mercado de 5.5M de personas en España.
+
+La segunda sección se basa en el dato de que más de un 16\% de españoles,  padecen de sobrepeso. Acostumbran a ser adultos. 
+
+
+Por último, la tercera sección se basa en el demoledor registro en el que más del 70\% de habitantes en España reconoció tomar o haber tomado alguna vez algún suplemento nutricional.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TABLA SEGMENTACIÓN
+
 \begin{table}[h]
     \centering
-    \caption{Segmentos de Público Objetivo}
-    \begin{tabular}{>{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{5cm} >{\raggedright\arraybackslash}p{5cm}}
-    \toprule
-    \blueheader{Segmento} & \blueheader{Características} & \blueheader{Enfoque de Marketing} \\
-    \midrule
-    \bluecell{Segmento 1} & & \\
-    \midrule
-    \bluecell{Segmento 2} & & \\
-    \midrule
-    \bluecell{Segmento 3} & & \\
-    \bottomrule
+    \renewcommand{\arraystretch}{1.5} % Increase row height slightly
+    \begin{tabular}{!{\color{black}\vrule} >{\centering\arraybackslash\columncolor{lightroyalsky}\fontfamily{qag}\selectfont}p{3cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule}}
+    \noalign{\hrule height 1pt} % Top rule
+    \rowcolor{royalblue}{\fontfamily{qag}\selectfont\color{white} Características} & {\fontfamily{qag}\selectfont\color{white} Deporte} & {\fontfamily{qag}\selectfont\color{white} Pérdida de Peso} & {\fontfamily{qag}\selectfont\color{white} Deficiencias Nutricionales} \\
+    \noalign{\hrule} % Mid rule
+    Edad & 18-24 & 25-55 & 30-65 \\
+    \noalign{\hrule} % Mid rule
+    Poder Adquisitivo & Medio-Alto & Medio-Alto & Medio \\
+    \noalign{\hrule} % Mid rule
+    Descripción & Personas activas que entrenan regularmente, desde aficionados hasta atletas. & Hombres y mujeres que buscan perder peso por estética o salud. & Adultos que buscan mejorar su salud debido a deficiencias nutricionales. \\
+    \noalign{\hrule} % Mid rule
+    Objetivos & Mejorar rendimiento, ganar músculo, optimizar recuperación. & Reducir grasa corporal e incrementar metabolismo. & Mantener una nutrición equilibrada, mejorar vitalidad. \\
+    \noalign{\hrule} % Mid rule
+    Necesidades & Sentirse bien antes, después y mientras hacen ejercicio. & Obtener resultados significativos en un periodo de tiempo razonable. & Complementar sus carencias nutricionales para obtener una mejor salud. \\
+    \noalign{\hrule} % Mid rule
+    Limitaciones & Precio, calidad, restricciones dietéticas, desinformación. & Desconfianza en suplementos& Falta de conocimiento, miedo a interacciones con medicamentos. \\
+    \noalign{\hrule} % Mid rule
+    Tareas & Buscar suplementos de calidad, comparar marcas, seguir dietas específicas. & Investigar productos naturales y efectivos, leer reseñas, buscar asesoramiento. & Consultar médicos, buscar formatos fáciles de consumir, comparar precios. \\
+    \noalign{\hrule} % Mid rule
+    Escenarios & Compras después de un entreno & Compra motivada por estética antes del verano & Compra recomendada tras análisis de sangre. \\
+    \noalign{\hrule height 1pt} % Bottom rule
     \end{tabular}
 \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Propuesta de Valor}
+La propuesta de valor de Elite Supplements yace en satisfacer la necesidad y deseo humano de tener el mejor cuerpo posible a través de la comida de la cual se abastece. Para conseguir esta meta, nos basaremos en nuestros 3 perfiles posibles de compradores.
+
+\subsection{Deportistas y Atletas}
+Las sensaciones son vitales para el deporte, una sensación dicta cuando empezar, con que ejercicios vas a disfrutar más, cuanta energía y dedicación vas a dedicar a cada actividad y más importante, cuando parar.
+
+Para que las sensaciones sean acertadas y se pueda complacerse del deporte hecho y el deporte por hacer, se dispone de un amplio rango de productos para el antes, el durante y el después del ejercicio.
+
+\begin{itemize}
+    \item \textbf{Proteína en polvo}: Fórmulas de alta calidad con opciones de personalización en sabor, permitiendo a los clientes elegir entre una variedad de opciones como chocolate, vainilla, fresa, café, y sabores innovadores como tarta de queso o caramelo salado.
+    \item \textbf{Creatina}: Monohidrato de creatina micronizado para mejorar el rendimiento y la recuperación muscular, disponible en formatos en polvo y cápsulas.
+    \item \textbf{Bebidas isotónicas}: Formulaciones con electrolitos esenciales para la hidratación y reposición de minerales perdidos durante el ejercicio, con sabores refrescantes como limón, naranja y frutos rojos.
+    \item \textbf{Aminoácidos esenciales (EAA) y BCAA}: Ayudan en la recuperación y síntesis de proteínas musculares, disponibles en polvo o tabletas.
+    \item \textbf{Pre-entrenamiento}: Fórmulas energizantes con cafeína, beta-alanina y otros compuestos para potenciar la resistencia y el enfoque durante el entrenamiento.
+    \item \textbf{Barritas proteicas}: Snacks saludables y equilibrados con un alto contenido de proteínas y bajos en azúcares añadidos.
+\end{itemize}
+
+
+\subsection{Personas con sobrepeso}
+El sobrepeso no es un asunto que se deba tomar a la ligera. Es una condición seria, ya que, además de potenciar la probabilidad de padecer enfermedades cardiovasculares, también produce efectos psicológicos negativos, ya que por simple programación biológica, queremos vernos delgados.
+
+Sea por motivos glandulares, por la carencia de deporte en el día a día o simplemente porque devoramos las mesas durante las comidas, tener unos kilos de más debería ser solo una situación temporal. Para ello disponemos de productos para bajar los kilos y mantenerlos a raya.
+
+\begin{itemize}
+    \item \textbf{Aceleradores del metabolismo naturales}: Fórmulas basadas en extractos como café verde, cúrcuma y pimienta negra, que pueden ayudar a mejorar el gasto energético sin efectos adversos.
+    \item \textbf{Batidos saciantes}: Mezclas equilibradas con alto contenido en fibra y proteínas, diseñadas para prolongar la sensación de saciedad y evitar el picoteo entre comidas.
+    \item \textbf{Bebidas funcionales con bajo índice calórico}: Infusiones y bebidas con ingredientes naturales como té verde, jengibre y canela, conocidos por su potencial para mejorar el metabolismo.
+    \item \textbf{Suplementos de fibra soluble}: Ayudan a mejorar la digestión, controlar el apetito y regular los niveles de azúcar en sangre.
+    \item \textbf{Infusiones y tisanas funcionales}: Mezclas de hierbas como té verde, jengibre, canela y diente de león, conocidas por su potencial para estimular el metabolismo de forma natural.
+    \item \textbf{Yogures y postres proteicos sin azúcar}: Alternativas con alto contenido proteico y bajo en azúcares añadidos, perfectos como snacks saludables.
+\end{itemize}
+
+
+\subsection{Personas con Deficiencias Nutricionales}
+Hasta haciéndolo todo bien en la cocina, en ciertas circunstancias, nuestro cuerpo no nos sigue el ritmo. Carecer de algún componente nutricional no debería parar nuestro día a día. Para poner fin a esta situación, ofrecemos los siguientes productos.
+
+\begin{itemize}
+    \item \textbf{Multivitamínicos A-Z}: Suplementos completos con todas las vitaminas y minerales esenciales en formato de pastillas, cápsulas o sobres solubles.  
+    \item \textbf{Vitamina D}: Clave para la absorción de calcio y el fortalecimiento óseo, especialmente recomendada para personas con poca exposición solar.  
+    \item \textbf{Vitamina B12}: Fundamental para el metabolismo energético y la salud neurológica, especialmente importante para personas con dietas vegetarianas o veganas.  
+    \item \textbf{Hierro y complementos con vitamina C}: Para mejorar la absorción y prevenir la anemia ferropénica. Disponible en comprimidos, líquidos o sobres.  
+    \item \textbf{Magnesio}: Esencial para la función muscular, la relajación y el sistema nervioso, disponible en formatos de citrato o bisglicinato para mejor absorción.  
+    \item \textbf{Calcio con vitamina D y K2}: Suplementos combinados que favorecen la salud ósea y la correcta distribución del calcio en el organismo.  
+    \item \textbf{Zinc}: Importante para la función inmune, la regeneración celular y la salud de la piel. Disponible en tabletas o sobres solubles.  
+    \item \textbf{Ácidos grasos Omega-3}: Suplementos a base de aceite de pescado o algas, esenciales para la salud cardiovascular y cerebral.  
+    \item \textbf{Probióticos y prebióticos}: Para el equilibrio de la flora intestinal y la mejora de la digestión, en cápsulas o sobres solubles.  
+    \item \textbf{Suplementos de colágeno con ácido hialurónico}: Para la salud articular, la piel y la regeneración de tejidos.  
+\end{itemize}
+
+
+
 \section{Competencia}
+\subsection{Competencia Específica}
+
+En el mercado de los suplementos nutricionales, Elite Supplements compite con diversas marcas especializadas en nutrición deportiva y bienestar. Algunos de los principales competidores incluyen: \textbf{MyProtein, Optimum Nutrition, HSN (Healthy Sports Nutrition), Prozis, Amix Nutrition, Bulk}. Dentro del mercado de los suplementos nutricionales, cada competidor tiene fortalezas bien definidas, pero también enfrentan \roundhl{\textbf{\textcolor{bknwhite}{debilidades}}}.
+
+\subsection{Competencia no Específica}
+
+Además de las marcas especializadas, EliteSupplements enfrenta competencia indirecta de otros actores que ofrecen productos similares en diferentes formatos o canales como supermercados y grandes superficies, farmacias, tiendas especializadas en fitness, marketplaces online o marcas multinivel (Herbalife, Amway, Juice Plus+).
+
+\subsection{Posicionamiento de la Competencia Directa}
+En un mercado altamente competitivo como el de los suplementos, en EliteSupplements buscamos diferenciarnos mediante tres pilares clave: calidad, innovación y personalización. Nos inspiramos en referentes del sector, tomando la calidad de Optimum Nutrition, la innovación de Huel y la personalización de Gainful, para ofrecer un producto que combine lo mejor de cada uno. Nuestro objetivo es posicionarnos en el punto óptimo donde convergen estos elementos, brindando una experiencia superior y adaptada a las necesidades de cada cliente.
+
+\vspace{1CM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DIAGRAMA DE VEN
+\begin{center}
+\begin{tikzpicture}
+% Define the radius and centers of the circles
+\def\radius{2.5cm}
+\def\redx{-1.2cm}
+\def\redy{0.7cm}
+\def\bluex{1.2cm}
+\def\bluey{0.7cm}
+\def\greenx{0cm}
+\def\greeny{-1.2cm}
+% Use blend mode for proper color mixing
+\begin{scope}[blend mode=multiply]
+    % Red circle (ON)
+    \fill[redcircle] (\redx,\redy) circle (\radius);
+    
+    % Blue circle (Huel)
+    \fill[bluecircle] (\bluex,\bluey) circle (\radius);
+    
+    % Green circle (Gainful)
+    \fill[greencircle] (\greenx,\greeny) circle (\radius);
+\end{scope}
+% Add logos to circles with adjusted positions
+% Position for ON logo - moved further to the left
+\node at (\redx-1.25cm,\redy+0.5cm) {\includegraphics[width=2.5cm]{logo-on.png}};
+% Position for Huel logo - moved further to the right
+\node at (\bluex+1.25cm,\bluey+0.5cm) {\includegraphics[width=2cm]{logo-huel.png}};
+% Position for Gainful logo - moved further down
+\node at (\greenx,\greeny-1.25cm) {\includegraphics[width=4cm]{logo-gainful.png}};
+% Position for center logo (intersection of all three)
+\node at (0,0) {\includegraphics[width=1.75cm]{logo-elite.png}};
+% Add outward arrows with labels
+% Arrow for red circle (Calidad) - horizontal going left
+\draw[-{Stealth[length=3mm]}] (\redx-\radius+0.2,\redy) -- (-5.0,\redy);
+\node[anchor=east] at (-5.2,\redy) {\large\fontfamily{qag}\selectfont Calidad};
+% Arrow for blue circle (Innovación) - horizontal going right
+\draw[-{Stealth[length=3mm]}] (\bluex+\radius-0.2,\bluey) -- (5.0,\bluey);
+\node[anchor=west] at (5.2,\bluey) {\large\fontfamily{qag}\selectfont Innovación};
+% Arrow for green circle (Personalización) - vertical going down
+\draw[-{Stealth[length=3mm]}] (\greenx,\greeny-\radius+0.2) -- (\greenx,-4.3);
+\node[anchor=north] at (\greenx,-4.2) {\large\fontfamily{qag}\selectfont Personalización};
+\end{tikzpicture}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Ventaja diferencial}
+En el mercado de suplementos nutricionales, competimos con marcas que han logrado posicionarse mediante estrategias agresivas de precio y volumen de ventas. MyProtein y Bulk dominan con precios accesibles y constantes descuentos, lo que les permite atraer un alto volumen de clientes. Optimum Nutrition, por su parte, se enfoca en la calidad y la confianza de atletas profesionales, respaldando su marca con certificaciones y una fuerte presencia en gimnasios y tiendas especializadas. Además, marcas como HSN y Prozis han desarrollado estrategias digitales eficientes, logrando fidelizar clientes con promociones frecuentes y programas de recompensas.
+
+\subsection{Dificultades, Amenazas y Barreras}
+El mercado de suplementos es altamente competitivo y está saturado de opciones que van desde marcas económicas con gran alcance hasta empresas premium que han consolidado su reputación con décadas de experiencia. La tendencia hacia la compra en marketplaces como Amazon representa una barrera significativa, ya que muchos consumidores priorizan conveniencia y rapidez de entrega sobre calidad o personalización. Asimismo, la publicidad masiva y la capacidad de inversión en marketing de las grandes marcas dificultan la captación de nuevos clientes, ya que dominan los espacios publicitarios y tienen acuerdos con influencers y embajadores del fitness. Otro reto es la desinformación y la influencia de tendencias sin base científica, que llevan a muchos consumidores a optar por productos de moda en lugar de suplementos respaldados por evidencia.
+
+
+\subsection{Competencia en Línea}
+Las marcas con mayor presencia en el mercado saben el entorno digital para consolidar su posicionamiento. MyProtein y Bulk utilizan estrategias agresivas de descuentos y envíos gratuitos en pedidos grandes, lo que incentiva compras recurrentes. Optimum Nutrition se enfoca en distribuir sus productos en tiendas especializadas y farmacias, aprovechando la confianza del consumidor en estos canales. La mayoría de las marcas del sector invierten en publicidad en redes sociales, Google Ads y colaboraciones con influencers, asegurando una alta visibilidad y presencia en las plataformas donde los consumidores buscan recomendaciones. Además, algunas empresas implementan suscripciones y programas de fidelización que facilitan la retención de clientes, creando una barrera de entrada para nuevas marcas que buscan competir en este mercado.
+
+
 
 \chapter{Objetivos}
 
+% Diagrama de Customer Journey
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        scale=0.9, transform shape, % Escala todo el diagrama
+        box/.style={
+            draw=lightroyalblue,
+            fill=lightroyalblue,
+            rounded corners=10pt,
+            text=white,
+            minimum width=3cm,
+            minimum height=2cm,
+            font=\fontfamily{qag}\selectfont,
+            align=center
+        },
+        arrow/.style={
+            ->,
+            line width=0.25cm, % Flechas más delgadas
+            draw=lightroyalsky!30
+        }
+    ]
+    
+    % Título centrado
+    \node[font=\fontfamily{qag}\selectfont\Large, align=center] at (4.5,1.5) {Customer Journey};
+    
+    % Reorganizar los bloques para centrar mejor el diagrama
+    \node[box] (discover) at (0,0) {Descubrimiento};
+    \node[box] (consider) at (3,-2.5) {Consideración};
+    \node[box] (buy) at (6,-5) {Compra};
+    \node[box] (experience) at (9,-7.5) {Experiencia};
+    \node[box] (loyalty) at (12,-10) {Fidelización y\\Recomendación};
+    
+    % Descripciones - con anchor=west para alinear a la izquierda
+    \node[anchor=west] at ($(discover.east) + (0.2,0)$) {
+        \begin{minipage}{4cm}
+        \small • Ve un anuncio en redes sociales o recibe una recomendación de un amigo
+        \end{minipage}
+    };
+    
+    \node[anchor=west] at ($(consider.east) + (0.2,0)$) {
+        \begin{minipage}{4cm}
+        \small • Visita nuestra tienda online o consulta en un marketplace y compara opciones
+        \end{minipage}
+    };
+    
+    \node[anchor=west] at ($(buy.east) + (0.2,0)$) {
+        \begin{minipage}{4cm}
+        \small • Adquiere el producto motivado por beneficios, promociones, testimonios o características
+        \end{minipage}
+    };
+    
+    \node[anchor=west] at ($(experience.east) + (0.2,0)$) {
+        \begin{minipage}{4cm}
+        \small • Prueba el producto y recibe soporte postventa, programa de servicio al cliente rápido, eficaz y personalizado
+        \end{minipage}
+    };
+    
+    \node[anchor=west] at ($(loyalty.east) + (0.2,0)$) {
+        \begin{minipage}{4cm}
+        \small • Recomienda, participa en programas de fidelización o vuelve a cerrar el ciclo recomendando la marca
+        \end{minipage}
+    };
+    
+    % Flechas simplificadas con ángulos de 90 grados
+    % Desde Descubrimiento a Consideración
+    \draw[arrow] (discover.south) -- ++(0,-0.75) -| (consider.west);
+    
+    % Desde Consideración a Compra
+    \draw[arrow] (consider.south) -- ++(0,-0.75) -| (buy.west);
+    
+    % Desde Compra a Experiencia de uso
+    \draw[arrow] (buy.south) -- ++(0,-0.75) -| (experience.west);
+    
+    % Desde Experiencia de uso a Fidelización
+    \draw[arrow] (experience.south) -- ++(0,-0.75) -| (loyalty.west);
+    
+    % Leyenda al pie
+    \node[font=\fontfamily{qag}\selectfont, align=center] at (6,-12) {Figura 3.1: Proceso de Customer Journey};
+    
+    \end{tikzpicture}
+\end{figure}
+
+\section{Objetivos de Negocio}
+
+\section{Objetivos Tácticos de Conversión}
+
+\section{Campañas}
+
+\section{Lineas Estratégicas}
 \end{document}
