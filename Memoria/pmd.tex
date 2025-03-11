@@ -24,12 +24,12 @@
 \usetikzlibrary{calc}
 
 % Define royal blue color and its lighter variants
-\definecolor{royalblue}{RGB}{65, 105, 225}
-\definecolor{lightroyalblue}{RGB}{30, 144, 255}
-\definecolor{royalsky}{RGB}{0, 191, 255}
-\definecolor{lightroyalsky}{RGB}{135, 206, 235}
+\definecolor{royalblue}{RGB}{0, 24, 64}
+\definecolor{lightroyalblue}{RGB}{16, 36, 113}
+\definecolor{royalyellow}{RGB}{245, 196, 0}
+\definecolor{lightroyalyellow}{RGB}{253, 197, 95}
 
-\definecolor{bknwhite}{RGB}{248, 249, 250}
+\definecolor{bknwhite}{RGB}{255, 253, 240}
 
 \definecolor{redcircle}{RGB}{176, 56, 73}     % Red for ON circle
 \definecolor{bluecircle}{RGB}{100, 143, 192}  % Blue for Huel circle
@@ -46,8 +46,8 @@
   left=1pt,
   arc=2pt, % This controls the corner radius
   boxsep=0pt,
-  colback=royalsky, % Highlight color
-  colframe=royalsky,
+  colback=royalyellow, % Highlight color
+  colframe=royalyellow,
 }
 
 
@@ -96,7 +96,7 @@
 \fancyfoot[R]{\textcolor{royalblue}{{Plan de Marketing Digital}}}
 
 % Custom table style
-\newcommand{\bluecell}[1]{\cellcolor{lightroyalsky}#1}
+\newcommand{\bluecell}[1]{\cellcolor{lightroyalyellow}#1}
 \newcommand{\blueheader}[1]{\cellcolor{royalblue}\textcolor{white}{\textbf{#1}}}
 
 % Custom title page - versión simplificada
@@ -193,19 +193,19 @@ En España la concienciación de lo que comemos crece diariamente, llegando a ni
 Elite Supplements opera exclusivamente en España, con un modelo de negocio tanto online como en tienda física. Nuestra visión de empresa es llegar a ser la tienda de referencia en cuanto a suplementos nutricionales, distinguiendonos de los pilares fundamentales de la compañía son los que se listan a continuación:
 \vspace{0.5cm}
 
-\textcolor{royalsky}{\LARGE{Calidad}} \newline
+\textcolor{royalyellow}{\LARGE{Calidad}} \newline
 En Elite Supplements, garantizamos la excelencia mediante rigurosa selección de materias primas, controles exhaustivos de fabricación y certificaciones internacionales que avalan la pureza y potencia de nuestros productos. Nos comprometemos con estándares superiores para asegurar que cada producto optimice efectivamente la salud y rendimiento de nuestros clientes.
 \newline
 
-\textcolor{royalsky}{\LARGE{Confianza}} \newline
+\textcolor{royalyellow}{\LARGE{Confianza}} \newline
 Construimos relaciones duraderas basadas en transparencia total sobre ingredientes y sus cantidades exactas. Respaldamos nuestras afirmaciones con evidencia científica sólida, generando una comunidad leal que nos recomienda por nuestra integridad y resultados consistentes.
 \newline
 
-\textcolor{royalsky}{\LARGE{Innovación}} \newline
+\textcolor{royalyellow}{\LARGE{Innovación}} \newline
 Dedicamos recursos significativos a investigación y desarrollo para descubrir nuevos compuestos bioactivos y mejorar la biodisponibilidad. Nuestro equipo científico colabora con instituciones académicas de prestigio para anticipar necesidades emergentes y establecer nuevos estándares en la industria nutricional global.
 \newline
 
-\textcolor{royalsky}{\LARGE{Personalización}} \newline
+\textcolor{royalyellow}{\LARGE{Personalización}} \newline
 Reconocemos la singularidad de cada individuo mediante sistemas avanzados de evaluación que permiten recomendar combinaciones específicas de suplementos adaptadas a cada perfil. Ofrecemos asesoramiento especializado y seguimiento continuo para ajustar recomendaciones, maximizando la efectividad de nuestros productos y ayudando a cada persona a alcanzar sus objetivos de forma óptima.
 \newline
 
@@ -229,7 +229,7 @@ La primera sección se basa en el hecho que un 50\% de habitantes practica ejerc
   \begin{minipage}{0.48\textwidth}
     \centering
     \begin{tikzpicture}[scale=0.9]
-      \pie[color={greencircle,greencircle!80!white,royalblue!80!white,royalblue!70!white,royalblue!60!white,lightroyalblue!50!white}, 
+      \pie[color={royalyellow,royalyellow!80!white,lightroyalblue!80!white,lightroyalblue!70!white,lightroyalblue!60!white,lightroyalblue!50!white}, 
            sum=100, 
            after number=\%, 
            before number=,
@@ -242,7 +242,7 @@ La primera sección se basa en el hecho que un 50\% de habitantes practica ejerc
   \begin{minipage}{0.48\textwidth}
     \centering
     \begin{tikzpicture}[scale=0.9]
-      \pie[color={greencircle,royalblue!80!white,royalblue!70!white,royalblue!60!white,lightroyalblue!50!white,lightroyalblue!40!white}, 
+      \pie[color={royalyellow,lightroyalblue!80!white,lightroyalblue!70!white,lightroyalblue!60!white,lightroyalblue!50!white,lightroyalblue!40!white}, 
            sum=100, 
            after number=\%, 
            before number=,
@@ -257,10 +257,11 @@ La primera sección se basa en el hecho que un 50\% de habitantes practica ejerc
 
 Estos factores llevaron al primer grupo concentrado de publico objetivo: Deportistas de entre 18-24 años, aproximadamente un tamaño de mercado de 5.5M de personas en España.
 
-La segunda sección se basa en el dato de que más de un 16\% de españoles,  padecen de sobrepeso. Acostumbran a ser adultos. 
+La segunda sección se basa en el dato de que más de un 16\% de españoles,  padecen de sobrepeso. Acostumbran a ser adultos de más de 30 años, aunque se dan casos en personas más jóvenes. 
 
+Por último, la tercera sección se basa en el demoledor registro en el que más del 70\% de habitantes en España reconoció tomar o haber tomado alguna vez algún suplemento nutricional. Esta parte de la población engloba a partes iguales personas de todas las edades, aunque es más frecuente que se halle en personas mayores de más de 50 años.
 
-Por último, la tercera sección se basa en el demoledor registro en el que más del 70\% de habitantes en España reconoció tomar o haber tomado alguna vez algún suplemento nutricional.
+Sintetizando toda esta información, podemos inducir el perfil de 3 posibles compradores, como se ve en la tabla de a continuación.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -268,22 +269,23 @@ Por último, la tercera sección se basa en el demoledor registro en el que más
 
 \begin{table}[h]
     \centering
+    \small
     \renewcommand{\arraystretch}{1.5} % Increase row height slightly
-    \begin{tabular}{!{\color{black}\vrule} >{\centering\arraybackslash\columncolor{lightroyalsky}\fontfamily{qag}\selectfont}p{3cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule}}
+    \begin{tabular}{!{\color{black}\vrule} >{\centering\arraybackslash\columncolor{bknwhite}\fontfamily{qag}\selectfont}p{3cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{4cm} !{\color{black}\vrule}}
     \noalign{\hrule height 1pt} % Top rule
-    \rowcolor{royalblue}{\fontfamily{qag}\selectfont\color{white} Características} & {\fontfamily{qag}\selectfont\color{white} Deporte} & {\fontfamily{qag}\selectfont\color{white} Pérdida de Peso} & {\fontfamily{qag}\selectfont\color{white} Deficiencias Nutricionales} \\
+    \rowcolor{royalblue}{\fontfamily{qag}\selectfont\color{white} Características} & {\fontfamily{qag}\selectfont\color{white} Estudiante} & {\fontfamily{qag}\selectfont\color{white} Salaryman} & {\fontfamily{qag}\selectfont\color{white} Ultimado} \\
     \noalign{\hrule} % Mid rule
-    Edad & 18-24 & 25-55 & 30-65 \\
+    Edad & 18-24 & 30-45 & 50-65 \\
     \noalign{\hrule} % Mid rule
-    Poder Adquisitivo & Medio-Alto & Medio-Alto & Medio \\
+    Poder Adquisitivo & Medio & Alto & Medio-Alto \\
     \noalign{\hrule} % Mid rule
-    Descripción & Personas activas que entrenan regularmente, desde aficionados hasta atletas. & Hombres y mujeres que buscan perder peso por estética o salud. & Adultos que buscan mejorar su salud debido a deficiencias nutricionales. \\
+    Descripción & Personas jóvenes que entrenan regularmente, desde aficionados hasta atletas. & Trabajadores que buscan productos para complementar su atareado día a día. & Adultos que buscan mejorar su salud debido a deficiencias nutricionales. \\
     \noalign{\hrule} % Mid rule
     Objetivos & Mejorar rendimiento, ganar músculo, optimizar recuperación. & Reducir grasa corporal e incrementar metabolismo. & Mantener una nutrición equilibrada, mejorar vitalidad. \\
     \noalign{\hrule} % Mid rule
-    Necesidades & Sentirse bien antes, después y mientras hacen ejercicio. & Obtener resultados significativos en un periodo de tiempo razonable. & Complementar sus carencias nutricionales para obtener una mejor salud. \\
+    Necesidades & Hacer ejercicio que complemente con la vida de estudiante. & Mantener la energía necesaria para su rutina. & Complementar sus carencias nutricionales para obtener una mejor salud. \\
     \noalign{\hrule} % Mid rule
-    Limitaciones & Precio, calidad, restricciones dietéticas, desinformación. & Desconfianza en suplementos& Falta de conocimiento, miedo a interacciones con medicamentos. \\
+    Limitaciones & Precio, calidad, restricciones dietéticas, desinformación. & Desconfianza en suplementos, falta de tiempo & Falta de conocimiento, miedo a interacciones con medicamentos. \\
     \noalign{\hrule} % Mid rule
     Tareas & Buscar suplementos de calidad, comparar marcas, seguir dietas específicas. & Investigar productos naturales y efectivos, leer reseñas, buscar asesoramiento. & Consultar médicos, buscar formatos fáciles de consumir, comparar precios. \\
     \noalign{\hrule} % Mid rule
@@ -298,7 +300,7 @@ Por último, la tercera sección se basa en el demoledor registro en el que más
 \newpage
 
 \section{Propuesta de Valor}
-La propuesta de valor de Elite Supplements yace en satisfacer la necesidad y deseo humano de tener el mejor cuerpo posible a través de la comida de la cual se abastece. Para conseguir esta meta, nos basaremos en nuestros 3 perfiles posibles de compradores.
+La propuesta de valor de Elite Supplements yace en satisfacer la necesidad y deseo humano de tener el mejor cuerpo posible a través de la comida de la cual se abastece. Para conseguir esta meta, nos basaremos en los objetivos de nuestros 3 perfiles posibles de compradores.
 
 \subsection{Deportistas y Atletas}
 Las sensaciones son vitales para el deporte, una sensación dicta cuando empezar, con que ejercicios vas a disfrutar más, cuanta energía y dedicación vas a dedicar a cada actividad y más importante, cuando parar.
@@ -351,7 +353,7 @@ Hasta haciéndolo todo bien en la cocina, en ciertas circunstancias, nuestro cue
 \section{Competencia}
 \subsection{Competencia Específica}
 
-En el mercado de los suplementos nutricionales, Elite Supplements compite con diversas marcas especializadas en nutrición deportiva y bienestar. Algunos de los principales competidores incluyen: \textbf{MyProtein, Optimum Nutrition, HSN (Healthy Sports Nutrition), Prozis, Amix Nutrition, Bulk}. Dentro del mercado de los suplementos nutricionales, cada competidor tiene fortalezas bien definidas, pero también enfrentan \roundhl{\textbf{\textcolor{bknwhite}{debilidades}}}.
+En el mercado de los suplementos nutricionales, Elite Supplements compite con diversas marcas especializadas en nutrición deportiva y bienestar. Algunos de los principales competidores incluyen: \textbf{MyProtein, Optimum Nutrition, HSN (Healthy Sports Nutrition), Prozis, Amix Nutrition, Bulk}. Dentro del mercado de los suplementos nutricionales, cada competidor tiene fortalezas bien definidas, pero también enfrentan \roundhl{\textbf{debilidades}}.
 
 \subsection{Competencia no Específica}
 
@@ -420,6 +422,81 @@ El mercado de suplementos es altamente competitivo y está saturado de opciones 
 \subsection{Competencia en Línea}
 Las marcas con mayor presencia en el mercado saben el entorno digital para consolidar su posicionamiento. MyProtein y Bulk utilizan estrategias agresivas de descuentos y envíos gratuitos en pedidos grandes, lo que incentiva compras recurrentes. Optimum Nutrition se enfoca en distribuir sus productos en tiendas especializadas y farmacias, aprovechando la confianza del consumidor en estos canales. La mayoría de las marcas del sector invierten en publicidad en redes sociales, Google Ads y colaboraciones con influencers, asegurando una alta visibilidad y presencia en las plataformas donde los consumidores buscan recomendaciones. Además, algunas empresas implementan suscripciones y programas de fidelización que facilitan la retención de clientes, creando una barrera de entrada para nuevas marcas que buscan competir en este mercado.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLAS PAG WEB
+
+% Table 1 - Evaluation 1
+\begin{table}[h]
+    \centering
+    \footnotesize % Reduce font size
+    \renewcommand{\arraystretch}{1.4} % Slightly reduced row height
+    \begin{tabular}{!{\color{black}\vrule} >{\raggedright\arraybackslash\columncolor{bknwhite}\fontfamily{qag}\selectfont}p{4.5cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{2cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{1.8cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{1.8cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{2cm} !{\color{black}\vrule}}
+    \noalign{\hrule height 1pt} % Top rule
+    \rowcolor{royalblue}{\fontfamily{qag}\selectfont\color{white} Criterios} & {\fontfamily{qag}\selectfont\color{white} Calificación} & {\fontfamily{qag}\selectfont\color{white} \# Preguntas} & {\fontfamily{qag}\selectfont\color{white} \# Respuesta} & {\fontfamily{qag}\selectfont\color{white} Calificación} \\
+    \noalign{\hrule} % Mid rule
+    Página de Inicio & 16 & 20 & 20 & 80\% \\
+    \noalign{\hrule} % Mid rule
+    Orientación a Tareas y Funcionalidad & 28 & 44 & 44 & 82\% \\
+    \noalign{\hrule} % Mid rule
+    Navegabilidad y Arq. De la Información & 20 & 29 & 29 & 84\% \\
+    \noalign{\hrule} % Mid rule
+    Formularios y entrada de datos & 14 & 23 & 23 & 80\% \\
+    \noalign{\hrule} % Mid rule
+    Confianza y Credibilidad & 10 & 13 & 13 & 88\% \\
+    \noalign{\hrule} % Mid rule
+    Calidad del Contenido y Escritura & 17 & 23 & 23 & 87\% \\
+    \noalign{\hrule} % Mid rule
+    Diagramación y Diseño Gráfico & 27 & 38 & 38 & 86\% \\
+    \noalign{\hrule} % Mid rule
+    Búsquedas & 12 & 20 & 20 & 80\% \\
+    \noalign{\hrule} % Mid rule
+    Ayuda, Retroalimentación \& Recuperación & 24 & 37 & 37 & 82\% \\
+    \noalign{\hrule} % Mid rule
+    \textbf{Calificación Final} & \textbf{168} & \textbf{247} & \textbf{247} & \textbf{84\%} \\
+    \noalign{\hrule height 1pt} % Bottom rule
+    \end{tabular}
+    \caption{Resumen de resultados - MyProtein}
+\end{table}
+
+% Table 2 - Evaluation 2
+\begin{table}[h]
+    \centering
+    \footnotesize % Reduce font size
+    \renewcommand{\arraystretch}{1.4} % Slightly reduced row height
+    \begin{tabular}{!{\color{black}\vrule} >{\raggedright\arraybackslash\columncolor{bknwhite}\fontfamily{qag}\selectfont}p{4.5cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{2cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{1.8cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{1.8cm} !{\color{black}\vrule} >{\centering\arraybackslash}p{2cm} !{\color{black}\vrule}}
+    \noalign{\hrule height 1pt} % Top rule
+    \rowcolor{royalblue}{\fontfamily{qag}\selectfont\color{white} Criterios} & {\fontfamily{qag}\selectfont\color{white} Calificación} & {\fontfamily{qag}\selectfont\color{white} \# Preguntas} & {\fontfamily{qag}\selectfont\color{white} \# Respuesta} & {\fontfamily{qag}\selectfont\color{white} Calificación} \\
+    \noalign{\hrule} % Mid rule
+    Página de Inicio & 12 & 20 & 20 & 80\% \\
+    \noalign{\hrule} % Mid rule
+    Orientación a Tareas y Funcionalidad & 21 & 44 & 42 & 75\% \\
+    \noalign{\hrule} % Mid rule
+    Navegabilidad y Arq. De la Información & 21 & 29 & 29 & 86\% \\
+    \noalign{\hrule} % Mid rule
+    Formularios y entrada de datos & 10 & 23 & 23 & 72\% \\
+    \noalign{\hrule} % Mid rule
+    Confianza y Credibilidad & 11 & 13 & 13 & 92\% \\
+    \noalign{\hrule} % Mid rule
+    Calidad del Contenido y Escritura & 17 & 23 & 23 & 87\% \\
+    \noalign{\hrule} % Mid rule
+    Diagramación y Diseño Gráfico & 27 & 38 & 38 & 86\% \\
+    \noalign{\hrule} % Mid rule
+    Búsquedas & 10 & 20 & 20 & 75\% \\
+    \noalign{\hrule} % Mid rule
+    Ayuda, Retroalimentación \& Recuperación & 22 & 37 & 37 & 80\% \\
+    \noalign{\hrule} % Mid rule
+    \textbf{Calificación Final} & \textbf{151} & \textbf{247} & \textbf{245} & \textbf{81\%} \\
+    \noalign{\hrule height 1pt} % Bottom rule
+    \end{tabular}
+    \caption{Resumen de resultados - Optimum Nutrition}
+\end{table}
+
+% Note: Remember to include in your preamble:
+% \usepackage{xcolor,colortbl}
+% \definecolor{lightroyalyellow}{RGB}{173,216,230}
+% \definecolor{royalblue}{RGB}{65,105,225}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \chapter{Objetivos}
@@ -442,7 +519,7 @@ Las marcas con mayor presencia en el mercado saben el entorno digital para conso
         arrow/.style={
             ->,
             line width=0.25cm, % Flechas más delgadas
-            draw=lightroyalsky!30
+            draw=lightroyalyellow!30
         }
     ]
     
