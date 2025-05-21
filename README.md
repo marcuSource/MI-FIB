@@ -6,3 +6,9 @@ Comentarios: Mejorar contenido de las diapositivas.
 
 ## Nota B2: 8.7
 Comentarios: Mejorar formato de presentación de las diapositivas.
+
+## Nota B4: 9.1
+Comentarios: Mejorar formato de presentación de las diapositivas.
+
+## Nota B5: 9.1
+Comentarios: Mejorar formato de presentación de las diapositivas.
