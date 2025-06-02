@@ -13,5 +13,5 @@ Comentarios: --
 ## Nota B5: 9.1
 Comentarios: --
 
-## Nota B6: --
+## Nota B6: 9.0
 Comentarios: --
